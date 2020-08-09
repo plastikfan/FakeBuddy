@@ -15,4 +15,4 @@ try {
 finally {
   Set-PSRepository PSGallery -InstallationPolicy $Policy
 }
-$RequiredModules | Import-Module
+$RequiredModules | Import-Module -Force
