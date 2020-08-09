@@ -22,7 +22,7 @@ stages:
   jobs:
     - job: InstallDependencies
       steps:
-      - powershell: .\bootstrap.ps1
+      - powershell: ./bootstrap.ps1
         displayName: 'Install pre-requisites'
 
 - stage: Construct
@@ -31,4 +31,6 @@ stages:
       steps:
         - task: PowerShell@2
           inputs:
+            pwsh: true
+            targetType: 'filePath'
             filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
