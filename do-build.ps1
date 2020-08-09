@@ -1,3 +1,3 @@
 
 Set-Location .\Elizium.FakeBuddy
-Invoke-Build
+Invoke-Build build
