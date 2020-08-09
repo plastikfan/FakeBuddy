@@ -4,6 +4,7 @@ param(
   [ValidateSet("CurrentUser", "AllUsers")]
   $Scope = "CurrentUser"
 )
+Write-Host "=== RUNNING BOOTSTRAP ==="
 [ModuleSpecification[]]$RequiredModules = Import-LocalizedData -BaseDirectory $PSScriptRoot `
   -FileName dependencies.psd1;
 $Policy = (Get-PSRepository PSGallery).InstallationPolicy;
