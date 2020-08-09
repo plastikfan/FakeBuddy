@@ -16,6 +16,7 @@ variables:
   minor: 0
   patch: $(Build.BuildID)
   buildVersion: $(major).$(minor).$(patch)
+  system.debug: true
 
 stages:
 - stage: Prepare
