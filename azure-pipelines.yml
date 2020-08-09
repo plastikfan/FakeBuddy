@@ -18,12 +18,15 @@ variables:
   buildVersion: $(major).$(minor).$(patch)
 
 stages:
-- stage: Construct
+- stage: Prepare
   jobs:
-    - job: Prepare
+    - job: InstallDependencies
       steps:
       - powershell: .\bootstrap.ps1
         displayName: 'Install pre-requisites'
+
+- stage: Construct
+  jobs:
     - job: Build
       steps:
         - task: PowerShell@2
