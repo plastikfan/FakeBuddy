@@ -17,8 +17,10 @@ variables:
   patch: $(Build.BuildID)
   buildVersion: $(major).$(minor).$(patch)
 
-steps:
-- powershell: .\bootstrap.ps1
-  displayName: 'Install pre-requisites'
-
-
+stages:
+- stage: Prepare
+  jobs:
+    - job: Prepare
+      steps:
+      - powershell: .\bootstrap.ps1
+        displayName: 'Install pre-requisites'
