@@ -5,6 +5,7 @@ task . Clean, Build, Tests, Stats
 task Tests ImportCompiledModule, Pester
 task CreateManifest CopyPSD, UpdatePublicFunctionsToExport
 task Build Compile, CreateManifest, Ana
+task Test Tests, Stats
 task Stats RemoveStats, WriteStats
 task Ana Analyse
 task Fix ApplyFix
