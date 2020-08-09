@@ -24,3 +24,11 @@ stages:
       steps:
       - powershell: .\bootstrap.ps1
         displayName: 'Install pre-requisites'
+- stage: Build
+  jobs:
+    - job: Build
+      steps:
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: 'invoke-build build'
