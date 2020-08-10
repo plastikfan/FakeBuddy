@@ -32,8 +32,13 @@ stages:
           failOnStderr: true
           targetType: 'filePath'
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
-      - powershell: ./show-pester-version.ps1
-        displayName: 'Show Pester Version'
+      - task: PowerShell@2
+        displayName: 'Show version'
+        inputs:
+          pwsh: true
+          failOnStderr: true
+          targetType: 'filePath'
+          filePath: '$(System.DefaultWorkingDirectory)/show-pester-version.ps'
       - task: PowerShell@2
         displayName: 'Run Tests'
         inputs:
