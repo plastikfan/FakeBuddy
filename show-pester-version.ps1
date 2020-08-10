@@ -1,3 +1,4 @@
 
-Write-Host ">>> Showing Pester Version >>>"
-get-module Pester | Format-List
+$version = get-module Pester
+Write-Host ">>> Showing Pester Version $($version.ToString())>>>"
+
