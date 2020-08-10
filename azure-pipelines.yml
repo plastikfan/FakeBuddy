@@ -34,6 +34,7 @@ stages:
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
       - task: Pester@10
         inputs:
+          PesterVersion: 'LatestVersion'
           scriptFolder: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Tests\*'
           resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
           usePSCore: true
