@@ -32,5 +32,9 @@ stages:
           failOnStderr: true
           targetType: 'filePath'
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
-
-
+      - task: Pester@10
+        inputs:
+          scriptFolder: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Tests\*'
+          resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
+          usePSCore: true
+          additionalModulePath: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Output\Elizium.FakeBuddy\'
