@@ -6,6 +6,8 @@ Describe 'merge-SettingsContent' -Tag 'CURRENT' {
     $resolved = Resolve-Path -Path '.\';
     Write-Host "RESOLVED PATH: $resolved";
 
+    Get-ChildItem -Directory -Recurse | ForEach-Object { $_.FullName }
+
     $settingsPath = './Tests/Data/windows-terminal.live.settings.json';
     $null = $settingsPath;
 

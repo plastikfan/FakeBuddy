@@ -6,6 +6,8 @@ Describe 'ConvertFrom-ItermColors' {
 
     $resolved = Resolve-Path -Path '.\';
     Write-Host "RESOLVED PATH: $resolved";
+
+    Get-ChildItem -Directory -Recurse | ForEach-Object { $_.FullName }
   }
 
   Context 'Out file mode' {

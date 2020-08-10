@@ -7,6 +7,8 @@ Describe 'join-AllSchemas' {
     $resolved = Resolve-Path -Path '.\';
     Write-Host "RESOLVED PATH: $resolved";
 
+    Get-ChildItem -Directory -Recurse | ForEach-Object { $_.FullName }
+
     . './Tests/Data/setup-schemes.data.ps1';
   }
 
