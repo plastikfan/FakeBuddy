@@ -1,8 +1,8 @@
 Describe 'ConvertFrom-ItermColors' {
   BeforeAll {
-    Get-Module Elizium.FakeBuddy | Remove-Module
-    Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
-      -ErrorAction 'stop' -DisableNameChecking
+    # Get-Module Elizium.FakeBuddy | Remove-Module
+    # Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
+    #   -ErrorAction 'stop' -DisableNameChecking
   }
 
   Context 'Out file mode' {

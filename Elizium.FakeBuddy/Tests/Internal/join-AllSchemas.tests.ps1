@@ -1,8 +1,8 @@
 Describe 'join-AllSchemas' {
   BeforeAll {
-    Get-Module Elizium.FakeBuddy | Remove-Module
-    Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
-      -ErrorAction 'stop' -DisableNameChecking
+    # Get-Module Elizium.FakeBuddy | Remove-Module
+    # Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
+    #   -ErrorAction 'stop' -DisableNameChecking
 
     . './Tests/Data/setup-schemes.data.ps1';
   }
