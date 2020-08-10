@@ -38,7 +38,7 @@ stages:
           pwsh: true
           failOnStderr: true
           targetType: 'filePath'
-          filePath: '$(System.DefaultWorkingDirectory)/show-pester-version.ps'
+          filePath: '$(System.DefaultWorkingDirectory)/show-pester-version.ps1'
       - task: PowerShell@2
         displayName: 'Run Tests'
         inputs:
