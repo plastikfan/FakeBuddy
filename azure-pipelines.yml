@@ -34,6 +34,8 @@ stages:
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
       - powershell: ./check-module-built.ps1
         displayName: 'Check Module Built'
+      - powershell: ./import-fake-buddy.ps1
+        displayName: 'Import Fake Buddy'
       - powershell: ./show-pester-version.ps1
         displayName: 'Show Version'
       - task: PowerShell@2
