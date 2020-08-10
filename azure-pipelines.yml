@@ -32,6 +32,11 @@ stages:
           failOnStderr: true
           targetType: 'filePath'
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
+      - task: PowerShell@2
+        displayName: 'Show Environment Variables'
+        inputs:
+          targetType: 'inline'
+          script: 'Get-ChildItem -Path Env:\'
       - powershell: ./check-module-built.ps1
         displayName: 'Check Module Built'
       - powershell: ./import-fake-buddy.ps1
