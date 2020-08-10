@@ -32,6 +32,8 @@ stages:
           failOnStderr: true
           targetType: 'filePath'
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
+      - powershell: ./check-module-built.ps1
+        displayName: 'Check Module built'
       - task: Pester@10
         inputs:
           PesterVersion: 'LatestVersion|OtherVersion'
