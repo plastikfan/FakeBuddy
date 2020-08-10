@@ -4,6 +4,9 @@ Describe 'join-AllSchemas' {
     # Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
     #   -ErrorAction 'stop' -DisableNameChecking
 
+    $resolved = Resolve-Path -Path '.\';
+    Write-Host "RESOLVED PATH: $resolved";
+
     . './Tests/Data/setup-schemes.data.ps1';
   }
 

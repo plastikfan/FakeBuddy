@@ -3,6 +3,8 @@ Describe 'merge-SettingsContent' -Tag 'CURRENT' {
     # Get-Module Elizium.FakeBuddy | Remove-Module
     # Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
     #   -ErrorAction 'stop' -DisableNameChecking
+    $resolved = Resolve-Path -Path '.\';
+    Write-Host "RESOLVED PATH: $resolved";
 
     $settingsPath = './Tests/Data/windows-terminal.live.settings.json';
     $null = $settingsPath;
