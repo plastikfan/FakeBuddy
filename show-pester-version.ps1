@@ -1,4 +1,4 @@
 
 $version = get-module Pester
-Write-Host ">>> Showing Pester Version $($version.ToString())>>>"
+Write-Host ">>> Showing Pester Version $($version.version.ToString()) >>>"
 
