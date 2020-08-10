@@ -1,4 +1,4 @@
 
 Push-Location .\Elizium.FakeBuddy
-Invoke-Build build
+Invoke-Build
 Pop-Location
