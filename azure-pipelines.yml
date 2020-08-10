@@ -26,8 +26,17 @@ stages:
       - powershell: ./bootstrap.ps1
         displayName: 'Install pre-requisites'
       - task: PowerShell@2
+        displayName: 'Perform build'
         inputs:
           pwsh: true
           failOnStderr: true
           targetType: 'filePath'
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
+      - task: PowerShell@2
+        displayName: 'Run Unit Tests'
+        inputs:
+          pwsh: true
+          failOnStderr: true
+          targetType: 'filePath'
+          filePath: '$(System.DefaultWorkingDirectory)/do-tests.ps1'
+
