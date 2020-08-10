@@ -32,14 +32,10 @@ stages:
           failOnStderr: true
           targetType: 'filePath'
           filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
-      - powershell: ./check-module-built.ps1
-        displayName: 'Check Module built'
-      - task: Pester@10
+      - task: PowerShell@2
+        displayName: 'Run Tests'
         inputs:
-          PesterVersion: 'LatestVersion|OtherVersion'
-          preferredPesterVersion: '5.0.3'
-          scriptFolder: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Tests\*'
-          resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
-          usePSCore: true
-          ScriptBlock: '{ import-module Elizium.FakeBuddy -force} '
-          additionalModulePath: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Output'
+          pwsh: true
+          failOnStderr: true
+          targetType: 'filePath'
+          filePath: '$(System.DefaultWorkingDirectory)/do-tests.ps1'

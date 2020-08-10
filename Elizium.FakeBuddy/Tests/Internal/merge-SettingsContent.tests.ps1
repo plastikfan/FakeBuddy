@@ -1,8 +1,8 @@
 Describe 'merge-SettingsContent' -Tag 'CURRENT' {
   BeforeAll {
-    # Get-Module Elizium.FakeBuddy | Remove-Module
-    # Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
-    #   -ErrorAction 'stop' -DisableNameChecking
+    Get-Module Elizium.FakeBuddy | Remove-Module
+    Import-Module .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.psm1 `
+      -ErrorAction 'stop' -DisableNameChecking
     $resolved = Resolve-Path -Path '.\';
     Write-Host "RESOLVED PATH: $resolved";
 
