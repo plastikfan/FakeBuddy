@@ -26,7 +26,7 @@ stages:
       - powershell: ./bootstrap.ps1
         displayName: 'Install pre-requisites'
       - task: PowerShell@2
-        displayName: 'Perform build & test'
+        displayName: 'Perform build'
         inputs:
           pwsh: true
           failOnStderr: true
