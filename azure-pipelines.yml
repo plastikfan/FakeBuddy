@@ -39,4 +39,5 @@ stages:
           scriptFolder: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Tests\*'
           resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
           usePSCore: true
+          ScriptBlock: '{ import-module Elizium.FakeBuddy -force} '
           additionalModulePath: '$(System.DefaultWorkingDirectory)\Elizium.FakeBuddy\Output'
