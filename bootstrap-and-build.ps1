@@ -24,4 +24,9 @@ Push-Location .\Elizium.FakeBuddy
 Write-Host "=== RUNNING BUILD ==="
 Invoke-Build Build
 
+# Add the module to PSModulePath
+#
+$env:PSModulePath = $env:PSModulePath + (Resolve-Path './Output/Elizium.FakeBuddy')
+Import-Module -Force Elizium.FakeBuddy
+
 Pop-Location
