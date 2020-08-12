@@ -27,6 +27,6 @@ Invoke-Build Build
 # Add the module to PSModulePath
 #
 $env:PSModulePath = $env:PSModulePath + (Resolve-Path './Output/Elizium.FakeBuddy')
-Import-Module -Force Elizium.FakeBuddy
+Import-Module Elizium.FakeBuddy -Force
 
 Pop-Location
