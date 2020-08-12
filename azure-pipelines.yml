@@ -17,11 +17,17 @@ variables:
   patch: $(Build.BuildID)
   buildVersion: $(major).$(minor).$(patch)
   system.debug: true
+  moduleName: 'Elizium.FakeBuddy'
 
 stages:
 - stage: Build
   jobs:
     - job: Build
       steps:
-      - powershell: ./do-pipeline.ps1
-        displayName: 'Run Pipeline'
+      - powershell: ./bootstrap-and-build.ps1
+        displayName: 'Install Dependencies'
+      - task: Pester@10
+        inputs:
+          scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
+          resultsFile: '$(System.DefaultWorkingDirectory)/Test-Pester.XML'
+          usePSCore: true
