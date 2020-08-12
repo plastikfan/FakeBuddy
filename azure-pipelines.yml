@@ -35,7 +35,11 @@ stages:
           versioningScheme: byEnvVar
           versionEnvVar: buildVersion
           buildProperties: 'VERSIONHERE=$(buildVersion)'
-
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'NuGetPackage'
+          publishLocation: 'Container'
       # - task: Pester@10
       #   inputs:
       #     scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
