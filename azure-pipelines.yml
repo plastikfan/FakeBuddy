@@ -26,6 +26,8 @@ stages:
       steps:
       - powershell: ./bootstrap-and-build.ps1
         displayName: 'Install Dependencies'
+      - powershell: ./check-module-built.ps1
+        displayName: 'Check module built'
       - task: Pester@10
         inputs:
           scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
