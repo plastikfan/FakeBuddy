@@ -36,4 +36,4 @@ stages:
           PesterVersion: 'LatestVersion|OtherVersion'
           preferredPesterVersion: '5.0.3'
           additionalModulePath: '$(System.DefaultWorkingDirectory)/$(moduleName)/Output'
-
+          ScriptBlock: '{ Set-location $(System.DefaultWorkingDirectory)/$(moduleName) }'
