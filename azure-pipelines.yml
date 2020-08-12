@@ -35,4 +35,5 @@ stages:
           usePSCore: true
           PesterVersion: 'LatestVersion|OtherVersion'
           preferredPesterVersion: '5.0.3'
-          ScriptBlock: '{ import-module $(System.DefaultWorkingDirectory)/$(moduleName)/Output/$(moduleName) -force }'
+          additionalModulePath: '$(System.DefaultWorkingDirectory)/$(moduleName)/Output'
+
