@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
 <package>
-    <metadata>
-        <id>Elizium.FakeBuddy</id>
-        <version>$VERSIONHERE$</version>
-        <authors>Plastikfan</authors>
-        <description>Test module to get Azure working</description>
-    </metadata>
+  <metadata>
+    <id>Elizium.FakeBuddy</id>
+    <version>$VERSIONHERE$</version>
+    <authors>Plastikfan</authors>
+    <description>Test module to get Azure working</description>
+    <projectUrl>https://github.com/plastikfan/FakeBuddy</projectUrl>
+  </metadata>
+  <files>
+    <file src="Output/Elizium.FakeBuddy/*" target="Elizium.FakeBuddy">
+  </files>
 </package>
