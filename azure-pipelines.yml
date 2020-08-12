@@ -25,9 +25,17 @@ stages:
     - job: Build
       steps:
       - powershell: ./bootstrap-and-build.ps1
-        displayName: 'Install Dependencies'
+        displayName: 'Bootstrap & Build'
       - powershell: ./check-module-built.ps1
         displayName: 'Check module built'
+      - task: NuGetCommand@2
+        inputs:
+          command: 'pack'
+          packagesToPack: '$(System.DefaultWorkingDirectory)/Elizium.FakeBuddy.nuspec'
+          versioningScheme: byEnvVar
+          versionEnvVar: buildVersion
+          buildProperties: 'VERSIONHERE=$(buildVersion)'
+
       # - task: Pester@10
       #   inputs:
       #     scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
