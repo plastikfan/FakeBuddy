@@ -24,11 +24,20 @@ Push-Location .\Elizium.FakeBuddy
 Write-Host "=== RUNNING BUILD & TEST ==="
 Invoke-Build
 
+if ($?) {
+  # Build Help
+  #
+  Write-Host "=== RUNNING BUILD HELP ==="
+  Invoke-Build buildHelp
 
-# Build Help
-#
-Write-Host "=== RUNNING BUILD HELP ==="
-Invoke-Build buildHelp
+  if ($?) {
+    Write-Host "--- PIPELINE COMPLETED OK ---"
+  } else {
+    Write-Host "!!! Build Help failed !!!" 
+  }
+} else {
+  Write-Host "!!! Build/Test failed !!!"
+}
 
 Pop-Location
 
