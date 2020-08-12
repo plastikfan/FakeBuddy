@@ -7,4 +7,6 @@ $defintionExists = Test-Path -Path .\Output\Elizium.FakeBuddy\Elizium.FakeBuddy.
 Write-Host "MODULE FOLDER EXISTS: $folderExists";
 Write-Host "MODULE DEFINITION EXISTS: $defintionExists";
 
+ $env:PSModulePath -split ';'
+ 
 Pop-Location
