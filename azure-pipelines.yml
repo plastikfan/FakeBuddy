@@ -28,12 +28,12 @@ stages:
         displayName: 'Install Dependencies'
       - powershell: ./check-module-built.ps1
         displayName: 'Check module built'
-      - task: Pester@10
-        inputs:
-          scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
-          resultsFile: '$(System.DefaultWorkingDirectory)/Test-Pester.XML'
-          usePSCore: true
-          PesterVersion: 'LatestVersion|OtherVersion'
-          preferredPesterVersion: '5.0.3'
-          additionalModulePath: '$(System.DefaultWorkingDirectory)/$(moduleName)/Output'
-          ScriptBlock: '{ Set-location $(System.DefaultWorkingDirectory)/$(moduleName) }'
+      # - task: Pester@10
+      #   inputs:
+      #     scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
+      #     resultsFile: '$(System.DefaultWorkingDirectory)/Test-Pester.XML'
+      #     usePSCore: true
+      #     PesterVersion: 'LatestVersion|OtherVersion'
+      #     preferredPesterVersion: '5.0.3'
+      #     additionalModulePath: '$(System.DefaultWorkingDirectory)/$(moduleName)/Output'
+      #     ScriptBlock: '{ Set-location $(System.DefaultWorkingDirectory)/$(moduleName) }'

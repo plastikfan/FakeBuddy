@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package>
+    <metadata>
+        <id>Elizium.FakeBuddy</id>
+        <version>$VERSIONHERE$</version>
+        <authors>Plastikfan</authors>
+        <description>Test module to get Azure working</description>
+    </metadata>
+</package>
