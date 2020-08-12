@@ -23,30 +23,5 @@ stages:
   jobs:
     - job: Build
       steps:
-      - powershell: ./bootstrap.ps1
-        displayName: 'Install pre-requisites'
-      - task: PowerShell@2
-        displayName: 'Perform build'
-        inputs:
-          pwsh: true
-          failOnStderr: true
-          targetType: 'filePath'
-          filePath: '$(System.DefaultWorkingDirectory)/do-build.ps1'
-      - task: PowerShell@2
-        displayName: 'Show Environment Variables'
-        inputs:
-          targetType: 'inline'
-          script: 'Get-ChildItem -Path Env:\'
-      - powershell: ./check-module-built.ps1
-        displayName: 'Check Module Built'
-      - powershell: ./import-fake-buddy.ps1
-        displayName: 'Import Fake Buddy'
-      - powershell: ./show-pester-version.ps1
-        displayName: 'Show Version'
-      - task: PowerShell@2
-        displayName: 'Run Tests'
-        inputs:
-          pwsh: true
-          failOnStderr: true
-          targetType: 'filePath'
-          filePath: '$(System.DefaultWorkingDirectory)/do-tests.ps1'
+      - powershell: ./do-pipeline.ps1
+        displayName: 'Run Pipeline'
