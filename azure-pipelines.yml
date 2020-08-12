@@ -31,3 +31,6 @@ stages:
           scriptFolder: '$(System.DefaultWorkingDirectory)/$(moduleName)/Tests/*'
           resultsFile: '$(System.DefaultWorkingDirectory)/Test-Pester.XML'
           usePSCore: true
+          PesterVersion: 'LatestVersion|OtherVersion'
+          preferredPesterVersion: '5.0.3'
+          ScriptBlock: '{ import-module $(System.DefaultWorkingDirectory)/$(moduleName)/Output}/$(moduleName)'
