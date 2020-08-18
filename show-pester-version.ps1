@@ -6,7 +6,7 @@
 
 $theme = Get-KrayolaTheme
 $line = @(
-  @('Message', 'i am stumped'),
-  @('Complaint', 'give us a bleeding break')
+  @('Message', 'This is a random change ...'),
+  @('Complaint', 'To check that merge with no-ff option is correct')
 )
 Write-ThemedPairsInColour -Pairs $line -Theme $theme
